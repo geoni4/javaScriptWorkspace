@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+  let lotto = [];
+  
+  for(let i =0;i<6;i++){
+    lotto[i] = parseInt(Math.random()*45 +1);
+    for(let j =0;j<i;j++){
+      if(lotto[i] == lotto[j]){
+        i --;
+        break;
+      }
+    }
+  }
+  console.log(lotto.sort((a, b) => a-b));
+
+  lotto = [];
+  while(1){
+    if(lotto.length >=6) break;
+    let num = parseInt(Math.random()*45 + 1);
+    if(lotto.indexOf(num) ==-1)
+      lotto.push(num)
+  }
+  console.log(lotto.sort((a, b) => a - b));
+  </script>
+
+</head>
+<body>
+  
+</body>
+</html>
