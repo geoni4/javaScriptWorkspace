@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+  let varArr = new Array(0, 1, 2, 3, 4, 5);
+  document.write("varArr.length: " + varArr.length + "<br>");
+
+    varArr=['사과','오렌지','포도'];
+   
+  for(let i =0;i<varArr.length;i++){
+    document.write(varArr[i] + ", ");
+  }
+  document.write("<br>");
+
+  for(let num in varArr){
+    document.write(num);
+  }
+
+  document.write("<br>");
+
+  varArr.forEach(e => {
+    document.write(e);
+  });
+  
+console.log("varArr.join() : " + varArr.join());
+  let lotto = new Array(6);
+  for(let i =0;i<6;i++){
+    lotto[i] = Math.floor(Math.random() * 45 +1);
+    for(let j =0;j<i;j++){
+      if(lotto[i] == lotto[j]){
+        i--;
+        break;
+      }
+    }
+  }
+console.log(lotto);
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

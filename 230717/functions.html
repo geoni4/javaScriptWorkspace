@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script>
+    // 함수 리턴
+    function funName() {
+      return function (x) {
+        for (var i = 1; i < 10; i++) {
+          console.log(x + " * " + i + " = " + (x * i));
+        }
+      }
+    }
+
+
+    // closure
+    // 함수 내에서 내부 함수가 외부 변수에 접근할 수 있다.
+
+
+    let returnFun = funName();
+    returnFun(4);
+    function funName(x) {
+      let letName = ":: 요청한 " + x + "에 대한 구구단::";
+      return function () {
+        console.log(letName);
+        for (let i = 1; i < 10; i++) {
+          console.log(x + " * " + i + " = " + (x * i));
+        }
+      }
+
+    }
+
+    returnFun = funName(5);
+    returnFun();
+
+    function outFun(width, height) {
+
+      console.log("triangle : " + triangle())
+      console.log("Rectangle : " + Rectangle())
+
+      function triangle() {
+        return (width * height) / 2;
+      }
+
+      function Rectangle() {
+        return width * height;
+      }
+
+    }
+    outFun(3, 5);
+
+
+
+  </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hoisting</title>
+  <script>
+    fun1(); // 정상 실행
+    fun2(); // 오류 발생
+
+    //명시적(선언)함수 생성
+    function fun1(){
+      console.log("fun1 run!");
+    }
+
+
+    // 익명 함수
+    var fun2 = function(){
+      console.log("fun2 run!");
+    }
+
+    fun2(); // 정상 실행
+    // 명시적 함수를 먼저 메모리에 올린다.
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

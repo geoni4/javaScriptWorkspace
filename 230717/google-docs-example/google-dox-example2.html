@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    let lotto = [];
+
+    while(1){
+      if(lotto.length >= 6) break;
+      let num = parseInt(Math.random()*45)+1;
+      if(lotto.indexOf(num)< 0)
+        lotto.push(num);
+    }
+    console.log(lotto.sort((a, b )=>a-b));
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

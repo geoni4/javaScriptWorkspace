@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+  // 콜백 함수
+  function add(x, y){
+    return x + y; 
+  }
+  function sub(x, y){
+    return x - y;
+  }
+
+  function printResult(x, y, callback){
+    let result = callback(x, y);
+    document.write(result + "<br>");
+  }
+
+  printResult(2, 3, add);
+  printResult(1, 2, sub);
+
+  document.write(add(10, 20) + "<br>");
+
+
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
