@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.onload = () =>{
+      let pTag = document.createElement("p");
+      let pTagContent = document.createTextNode("JavaScript");
+
+      pTag.appendChild(pTagContent);
+      document.body.appendChild(pTag);
+
+      let imgNode = document.createElement("img");
+      imgNode.setAttribute("src", "./img/logo.png");
+      imgNode.setAttribute("width", 170);
+      imgNode.setAttribute("height", 67);
+      imgNode.setAttribute("tempData", "logoImg");
+
+      document.body.appendChild(imgNode);
+    }
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

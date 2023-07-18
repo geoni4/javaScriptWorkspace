@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+
+    let objCar = {
+      width : "3m",
+      height: "2m",
+      cc: "2000cc",
+      energy: 100,
+      speed: power => objCar.energy * power,
+      fun1 : function() {return this},
+      fun2 : () => this
+    };
+
+    document.write(`${objCar.width}<br>`);
+    document.write(`${objCar.speed(1)}<br>`);
+    console.log(objCar.fun1());
+    let print ="";
+    for(let key in objCar){
+      print += key + " : " + objCar[key] + "\n";
+    }
+    console.log(print);
+
+    let objName = {
+      name : "Lee sun sin",
+      nation : "Korea",
+      gender : "men",
+      character : "good",
+    };
+    print = "";
+    for(let key in objName){
+      print += key + " : " + objName[key] + "\n";
+    }
+    console.log(print);
+    document.write(typeof(objName)+"<br>");
+
+    // let objCar2 = {
+    //   width : "3m",
+    //   height: "2m",
+    //   cc: "2000cc",
+    //   energy: 100,
+    //   speed: power => objCar.energy * power,
+    //   fun1 : function() {return this},
+    //   fun2 : () =>  {
+    //     return () => this;
+    //   }
+    // };
+    // console.log(objCar2.fun2());
+
+    //in 키워드
+    console.log("nation" in objName);
+    console.log("age" in objName);
+
+    //with 키워드
+    with(objName) {
+      console.log(`name : ${name}`);
+      console.log(`nation : ${nation}`);
+      console.log(`gender : ${gender}`);
+      console.log(`character : ${character}`);
+    }
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

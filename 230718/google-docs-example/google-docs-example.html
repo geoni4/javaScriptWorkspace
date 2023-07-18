@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function Circle(rad){
+      this.rad = rad;
+
+      this.getArea = function(){
+        return `반지름 ${this.rad} 넓이는 ${this.rad*this.rad*Math.PI}입니다.`;
+      }
+    }
+
+    var circle = new Circle(10);
+ document.write(circle.getArea()); //반지름 10 넓이는 314.1516 입니다."
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

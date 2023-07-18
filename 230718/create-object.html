@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Object</title>
+  <script>
+    // 객체 생성
+    // 1. Object()생성자 사용
+
+    let person = new Object();
+    person.name = "홍길동";
+    person.age = 35;
+
+
+    // 2. 객체 리터럴
+    let objPerson = {
+      name : "홍길동",
+      age : 35,
+      getAge: function(){
+        return this.age;
+      }
+    }
+
+
+
+    // 3. 생성자 함수 이용
+    // 함수에서도 기본적으로 this를 쓸 수 있음
+    // 함수가 만들어질 때 => 객체로 만들기 위해서 2가지를 준다.
+    // this, arguments
+    function Airplane(name, color, speed){
+      this.name = name;
+      this.color = color;
+      this.speed = speed;
+      this.fly = function (){
+        return this.speed + "fly!!"
+      };
+    }
+    
+    let plane1 = new Airplane("보라매", "레드", 100);
+    // 이렇게 하면 리터럴로 바뀌어서 대입된다.
+
+
+    let 홍길동 = new Grade("홍길동",100, 70, 80);
+
+    function Grade(name, kor, eng, math){
+      this.name = name;
+      this.kor = kor;
+      this.eng = eng;
+      this.math = math;
+
+      this.getAvg = function() {
+        let avg = (this.kor+this.math+this.eng)/3.0;
+        return `${name}의 평균은 ${avg}입니다.<br>`;
+      }
+      this.getGrade = function(){
+        let avg = (this.kor+this.math+this.eng)/3.0;
+        let grade = '가';
+        if(avg>=90){
+          grade = '수';
+        } else if(avg>=80){
+          grade = '우';
+        } else if(avg>=70){
+          grade = '미';
+        } else if(avg>=60){
+          grade = '양';
+        } else {
+          grade = '가';
+        }
+        return `${name}의 성적은 ${grade}입니다.<br>`;
+      }
+
+    }
+  document.write(홍길동.getAvg());
+  document.write(홍길동.getGrade());
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

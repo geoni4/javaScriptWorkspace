@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript</title>
+  <script>
+    //window.open("https://google.com", "openWindow", "width=500, height=300");
+    window.onload = function(){
+      console.log("FIRST!");
+    }
+
+    console.log("SECOND!");
+    console.log("THIRD!");
+
+         /*
+            Screen객체
+         */
+
+
+    function openWin(url, width, height) {
+         
+         console.log("screen.width : " + screen.width);
+         console.log("screen.height : " + screen.height);
+         
+         var left = screen.width/2 - width/2;
+         var top = screen.height/2 - height/2;
+         var opt = "width = " + width + ", height = " + height + ", left = " + left + ", top = " + top;
+         
+         open(url, "newWin", opt);
+      
+      }
+      
+      //openWin("https://yahoo.com", 800, 500);
+      window.onload = function() {
+        //location.href = "http://www.yahoo.com";
+        //location.assign("http://www.naver.com");
+        location.replace("http://www.naver.com");
+      }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
