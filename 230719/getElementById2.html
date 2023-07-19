@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.onload = () => {
+      let str = "";
+      str += `<p id='jsTitle'> javascript & node.js </p>`;
+      str += `<img id="logoImg" src="../230718/img/logo.png"`;
+      str += `width="170px" height="67px" tempData="logoImg"/>`;
+
+      document.body.innerHTML = str;
+
+
+      var titleNode = document.getElementById("jsTitle");
+      titleNode.style.fontSize = "1.2em";
+      titleNode.style.border = "1px solid #ff0000";
+
+      var logoNode = document.getElementById("logoImg");
+      logoNode.style.width ="170px";
+      logoNode.style.height = "67px";
+      
+
+    }
+
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

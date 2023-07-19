@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.onload = ()=>{
+      const all = document.querySelector("#all-check");
+      const boxes = document.querySelectorAll(".box");
+      all.addEventListener("click", (e)=>{
+        for(let index in boxes){
+          if(e.target.checked == false)
+            boxes[index].checked = false;
+          else
+            boxes[index].checked=true;
+        } 
+      })
+      boxes.forEach(box=>{
+        box.addEventListener("click", (e)=>{
+          if(e.target.checked == false){
+            all.checked = false;
+          } else{
+            for(let i =0; i<boxes.length; i++){
+              if(boxes[i].checked == false){
+                all.checked = false;
+                return;
+              }
+            }
+            all.checked = true;
+          }
+        })
+      });
+
+
+    }
+  </script>
+</head>
+<body>
+  전체선택 <input id="all-check" type="checkbox"/><br/>
+  <input class="box" type="checkbox"/> java <br/>
+  <input class="box" type="checkbox"/> sql <br/>
+  <input class="box" type="checkbox"/> angular
+</body>
+</html>

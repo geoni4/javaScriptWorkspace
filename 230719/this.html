@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.onload = ()=>{
+      const changeBlue = function(e){
+      console.log(e);
+      e.target.style.backgroundColor = "blue";
+
+      for(let key in event){
+        console.log(`${key}: ${event[key]}`)
+      }
+    }
+    
+    const changeRed = function(e){
+      console.log(e);
+      e.target.style.backgroundColor = "red";
+    }
+    
+    const changeGreen = function(e){
+      console.log(e);
+      e.target.style.backgroundColor = "green";
+    }
+    
+
+    const ce = document.getElementById("cEvent");
+    ce.addEventListener("click", changeBlue);
+    ce.addEventListener("dblclick", changeRed); 
+    
+    
+    const divE = document.getElementById("divEvent");
+    divE.addEventListener("click", changeBlue);
+    divE.addEventListener("dblclick", changeGreen);
+  }
+  </script>
+  <style>
+      #cEvent{
+        width: 200px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        font-size: 1.2em;
+        background-color: #f00;
+        color: #fff;
+        font-weight: bolder;
+      }
+      #divEvent{
+        width: 200px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        font-size: 1.2em;
+        background-color: green;
+        color: #fff;
+        font-weight: bolder;
+      }
+  </style>
+</head>
+<body>
+  <div id="cEvent">이벤트 클릭</div>
+  <div id="divEvent">div 클릭</div>
+</body>
+</html>

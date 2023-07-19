@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.onload = () => {
+      let keyupCode = document.getElementById("press-keyboard");
+      keyupCode.addEventListener("keyup", (e)=>{
+        let string = e.target.value;
+        let span = document.createElement("span");
+        if(string != "")  span.innerText = string.charCodeAt(string.length-1);
+        console.log(document.body.lastChild)
+        document.body.removeChild(document.querySelector("body > span"));
+        document.body.appendChild(span);
+      });
+
+
+      function inputHandler(event){
+        console.log(event.key);
+        console.log(event.keyCode);
+
+        docuemtn.getElementById('result').innerText = event.key.charCodeAt();
+      }
+      let input = document.getElementById("input_char");
+      input.addEventListener("keydowwn", inputHandler);
+
+      // let keyCode = document.getElementById("press-keyboard");
+      // keyCode.addEventListener("keyup", (e)=>{
+      //   let span = document.createElement("span");
+      //   span.innerText = e.keyCode;
+      //   document.body.removeChild(document.body.lastChild);
+      //   document.body.appendChild(span);
+
+      // })
+
+    }
+  </script>
+  
+</head>
+<body>
+  <input id="press-keyboard" />
+  <span></span>
+</body>
+</html>

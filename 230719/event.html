@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.onload =  ()=>{
+      let ce = document.getElementById("cEvent");
+
+      // ce.onclick = ()=>{
+      // //  document.write("꽝");
+      //   ce.style.backgroundColor = "blue";
+      // }
+
+      ce.ondblclick = ()=>{
+      //  document.write("꽝");
+        ce.style.backgroundColor = "red";
+      }
+
+      ce.addEventListener("click", (e)=>{
+        console.log(this);
+        e.target.style.backgroundColor = "blue";
+      })
+
+    }
+
+  </script>
+    <style>
+      #cEvent{
+        width: 200px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        font-size: 1.2em;
+        background-color: #f00;
+        color: #fff;
+        font-weight: bolder;
+      }
+  
+    </style>
+</head>
+<body>
+  <div id="cEvent" >이벤트 클릭</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+  window.onload = () =>{
+    const text = document.querySelector("#text");
+    function keyActive (e){
+      let string = e.target.value;
+      let cnt =0 ;
+      const count = document.querySelector("#count");
+      for( let num in string){
+        if(string.charAt(num) === '\n')
+          cnt++;
+      }
+      count.textContent = `입력 문자수: ${string.length - cnt}`;
+    }
+    text.addEventListener("keydown", keyActive);
+    text.addEventListener("keypress", keyActive);
+    text.addEventListener("keyup", keyActive);
+  }
+    
+
+  </script>
+</head>
+<body>
+  <div> 글자수 세기</div>
+  <textarea id="text" rows="10" cols="10"></textarea>
+  <div id ="count" >입력 문자수: 0</div>
+</body>
+</html>
