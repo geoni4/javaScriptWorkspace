@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.onload = ()=>{
+      setTimeout(function timer(){
+        const date = new Date();
+        const str = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+        const div =document.querySelector("body > div");
+        div.innerHTML = str;
+        setTimeout(timer, 1000);
+      },1000 );
+    }
+  </script>
+</head>
+<body>
+  <div></div>
+</body>
+</html>

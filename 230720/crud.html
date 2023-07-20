@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script>
+    $(document).ready(()=>{
+      const wrapObj = $("#wrap");
+
+      //객체 생성
+      const divObj = $("<div> 안녕하세요!! </div>");
+      //wrapObj.append(divObj);
+
+      divObj.css("background", "#ff0000");
+
+      $("<div> Hello jQuery! </div>").appendTo($("#wrap")).css("background", "#ff0000");
+
+      // <a> 객체 생성 및 추가
+      const aObj = $(`<a href="http://www.google.com" target="_blank"> google </a> <br/>`);
+      aObj.appendTo(wrapObj);
+
+      const imgObj = $(`<img src="../230718/img/logo.png" /> <br /> `);
+
+      imgObj.appendTo(wrapObj);
+      // divObj.prependTo(wrapObj);
+
+      divObj.insertAfter(wrapObj);
+      divObj.insertBefore(wrapObj);
+
+    });
+  </script>
+</head>
+<body>
+  <div id="wrap">
+    <div>contents</div>
+  </div>
+</body>
+</html>

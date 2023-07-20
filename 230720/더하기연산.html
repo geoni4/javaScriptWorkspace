@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script>
+  $(document).ready(()=>{
+    $("#operate").click(() =>{
+      $("#result").val(parseInt($("#num1").val())+parseInt($("#num2").val()));
+    });
+
+
+    const pTag = $("<p>안녕하세요</p>");
+    console.log(pTag);
+    $("#wrapper3").append(pTag);
+
+    $("#quantity").change(() =>{
+      $("#allcost").html(parseInt($("#cost").val())*parseInt($("#quantity").val()));
+    })
+      
+
+
+    $("#add-allcost").click(() =>{
+      let total = 0;
+      $(".fruits:checkbox:checked").each((index, item)=>{
+        total += Number($(item).val());
+      })
+      $("#allcost-fruits").html(total);
+    })
+  })
+  </script>
+  <style>
+    *{
+      font-family: D2Coding, Consolas, 'Courier New', Courier, monospace;
+    }
+  </style>
+</head>
+<body>
+  <h2>1. +연산</h2>
+  <div id="wrapper1">
+    <input id="num1" /> + <input id="num2" /> = <input id="result">
+    <button id="operate">연산</button>
+  </div>
+  <h2>2. 총합 구하기</h2>
+  <div id="wrapper2">
+    가격<input id="cost" value='2500' />X 수량 <select id="quantity">
+      <option  value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>
+      <option value=4>4</option>
+      <option value=5>5</option>
+      </select>
+      총합:<span id="allcost"></span>
+    </select>
+  </div>
+  <h2>3. 총합 구하기2 선택된 값만</h2>
+  <div id="wrapper3">
+    바나나(1000원) <input class="fruits"id="banana" type="checkbox" value="1000" /> <br/>
+    사과(500원) <input class="fruits" id="apple" type="checkbox" value="500" /> <br/>
+    배(1500원) <input class="fruits" id="pear" type="checkbox" value="1500" /> <br/>
+    <button id="add-allcost">총합 구하기</button><br/>
+    선택한 총 가격: <span id="allcost-fruits"></span><br/>
+  </div>
+</body>
+</html>
+

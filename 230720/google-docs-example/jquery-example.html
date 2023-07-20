@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script>
+     $(document).ready(()=>{
+      setTimeout(function timer(){
+        const date = new Date();
+        const str = `${("00"+date.getHours()).slice(-2)}:${("00"+date.getMinutes()).slice(-2)}:${("00"+ date.getSeconds()).slice(-2)}`;
+        $("body > div").html(str);
+        setTimeout(timer, 1000);
+      },1000 );
+    });
+  </script>
+</head>
+<body>
+  <div></div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script>
+$(document).ready(() =>{
+  $("p").each(function(index, item){
+    console.log(index + $(item).text())
+    //console.log(index + $(this).text());
+    //console.log(this);
+  })
+
+
+  $("#htmlMethod").html("<strong>new</strong>")
+  console.log($("#htmlMethod").html());
+  console.log($("#textMethod").text());
+
+  let num = $("#input").val("hello world");
+  console.log(num);
+
+  $("#removeMethod").remove();
+  $("#emptyMethod").empty();
+
+
+  $("#attrMethod img").attr("src", "../230718/img/logo.png");
+
+
+})
+
+  </script>
+</head>
+<body>
+  <input id="input" type="text" value="1"/>
+  <p> Hello javascript! </p>
+  <p> Hello jQuery! </p>
+  <p> Hello node.js! </p>
+  
+  <div id="htmlMethod"> html() 메서드 </div>
+  <div id="textMethod"> text() 메서드 </div>
+  
+  <div id="addClass"> addClass() 메서드 </div>
+  <div id="removeClass" class="remCla"> removeClass() 메서드 </div>
+  
+  <div id="attrMethod">
+     <img>
+     <br>
+     <img>
+  </div>
+  
+  <div id="cssMethod"> CSS METHOD </div>
+  
+  <div id="removeMethod"> Remove Object! </div>
+  <div id="emptyMethod"> Empty Object! </div>
+</body>
+</html>

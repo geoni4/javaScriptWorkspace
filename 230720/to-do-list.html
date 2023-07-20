@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script>
+    $(document).ready(() => {
+      const uList = $("#uList");
+      const words = $("#words");
+      $("#add").click(()=>{
+        uList.append(`<li>${words.val()}</li>`);
+      })
+    })
+  </script>
+  <style>
+    *{
+      font-family: D2Coding, Consolas, 'Courier New', Courier, monospace;
+    }
+    li{
+      margin-left: 1em;
+    }
+    li::marker{
+      content: "- ";
+    }
+  </style>
+</head>
+
+<body>
+  <input type="text" id="words">
+  <button type="button" id="add">추가</button><br>
+  <ui id="uList">
+
+  </ui>
+  <br>
+  <br>
+  <br>
+</body>
+
+</html>

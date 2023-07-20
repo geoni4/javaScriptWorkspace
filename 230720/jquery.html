@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script>
+    $(document).ready(() =>{
+      jQuery("p").css("color","red");
+      $("p").css("fontWeight", "bolder");
+
+      let myJQ = $("p");
+      myJQ.css("textDecoration", "underline");
+      const pTag = myJQ;
+
+      pTag.css("fontSize","2em").css("height","300px");
+    });
+
+
+
+    // window.onload = ()=>{
+    //   jQuery("p").css("color","red");
+    //   $("p").css("fontWeight", "bolder");
+
+    //   let myJQ = $("p");
+    //   myJQ.css("textDecoration", "underline");
+    //   const pTag = myJQ;
+
+    //   pTag.css("fontSize","2em").css("height","300px");
+      
+    // }
+  </script>
+  <style>
+    html{
+      font-family: Consolas, 'Courier New', Courier, monospace;
+    }
+  </style>
+</head>
+<body>
+  <p>Hello jQuery!</p>
+</body>
+</html>
