@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script>
+  $(document).ready(()=>{
+    // const ul = $("#to-do-list");
+    // const text = $("#text");
+    // const addBtn = $("#add-list");
+    // addBtn.click(()=>{
+    //   console.log(ul)
+    //   ul.append(
+    //   $("<li></li>")
+    //     .append(text.val())
+    //     .append($("<button></button>").text("X").click((e)=>{
+    //       $(e.currentTarget).parent().remove();
+    //     })
+    //   ))
+    // });
+
+      $("#add").click(function(){
+        const text = $("#words").val();
+        if(text=="")
+          return;
+        let list = $(`<li class="plant"></li>`);
+        list.text( text+"  X");
+
+        $("#uList").append(list);
+
+      })
+
+      $(document).on('click',".plant", function(){
+        $(this).remove();
+      })
+
+      // $(document).on('click',"#plant", function(){
+      //   $(this).remove();
+      // })
+
+  });
+  </script>
+</head>
+<body>
+  <!-- <input id="text" /> <button id="add-list">추가</button>
+  <ul id="to-do-list">
+
+  </ul> -->
+  <input type="text" id="words" />
+  <button type="button" id="add">추가</button>
+  <ul id="uList">
+    
+  </ul>
+</body>
+</html>

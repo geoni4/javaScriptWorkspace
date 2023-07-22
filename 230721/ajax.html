@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script>
+    $(document).ready(()=>{
+      $.ajax({
+        type:"GET",
+        url:"https://sample.bmaster.kro.kr/contacts?pageno=3&pagesize=10",
+        async: true,
+        success : function(result){
+          console.log("통신성공");
+          console.log(result);
+          const table = $('#list-table');
+          table.append (
+            $("<tr></tr>").append($("<td></td>").text("번호"))
+            .append($("<td></td>").text("이름"))
+            .append($("<td></td>").text("전화번호"))
+            .append($("<td></td>").text("주소"))
+            .append($("<td></td>").text("사진"))
+            .append($("<td></td>").text("삭제"))
+          );
+          const res = $(result.contacts);
+          console.log(res);
+          res.each((idx, person) => {
+            table.append(
+            $("<tr></tr>").append($("<td></td>").text(person.no))
+                        .append($("<td></td>").text(person.name))
+                        .append($("<td></td>").text(person.tel))
+                        .append($("<td></td>").text(person.address))
+                        .append($("<td></td>").append($(`<img />`).attr("src",person.photo)))
+                        .append($("<td></td>").append($(`<button></button>`).attr("id",`delete-${idx}`).text("삭제")))
+            );
+            const deleteBtn = $(`#delete-${idx}`);
+            deleteBtn.click((e)=>{
+              $(e.currentTarget).parent().parent().remove()
+            });
+          });
+        },
+        error: function(err){
+          console.log(err);
+        }
+      })
+    })
+  </script>
+  <style>
+    #list-table{
+      border: 1px solid #000000;
+    }
+  </style>
+</head>
+<body>
+  <table id="list-table" width ="500">
+
+  </table>
+</body>
+</html>

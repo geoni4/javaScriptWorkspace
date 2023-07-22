@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script>
+    $(document).ready(()=>{
+      $.ajax({
+        type:"GET",
+        url:"http://3.37.128.156:9999/hjs/rboard/list",
+        async: true,
+        success : function(result){
+          console.log("통신성공");
+          console.log(result);
+          const table = $('#list-table');
+          table.append (
+            $("<tr></tr>").append($("<td></td>").text("번호"))
+            .append($("<td></td>").text("이름"))
+            .append($("<td></td>").text("제목"))
+            .append($("<td></td>").text("날짜"))
+            .append($("<td></td>").text("조회수"))
+            .append($("<td></td>").text("삭제"))
+          );
+          $(result).each((idx, board) => {
+            console.log(board);
+            table.append(
+            $("<tr></tr>").append($("<td></td>").text(board.bid))
+                        .append($("<td></td>").text(board.bname))
+                        .append($("<td></td>").text(board.btitle))
+                        .append($("<td></td>").text(board.bdate))
+                        .append($("<td></td>").text(board.bhit))
+                        .append($("<td></td>").append($(`<button></button>`).attr("id",`delete-${board.bgroup}`).text("삭제")))
+            );
+            const deleteBtn = $(`#delete-${board.bgroup}`);
+            deleteBtn.click((e)=>{
+              $(e.currentTarget).parent().parent().remove()
+            });
+          });
+        },
+        error: function(err){
+          console.log(err);
+        }
+      })
+    })
+  </script>
+  <style>
+    #list-table{
+      border: 1px solid #000000;
+    }
+  </style>
+</head>
+<body>
+  <table id="list-table" width ="500">
+
+  </table>
+</body>
+</html>
