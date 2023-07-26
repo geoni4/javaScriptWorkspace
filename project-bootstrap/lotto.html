@@ -16,14 +16,30 @@
     text-align: center;
     border-radius: 100%;
     color: aliceblue;
+    text-shadow: 0px 0px 2px #000;
+  }
+  .single-digit{
+    background-color: #ffafb0;
+  }
+  .teens{
+    background-color: #ffafd8;
+  }
+  .twenties{
+    background-color: #caa6fe;
+  }
+  .thirties{
+    background-color: #afffba;
+  }
+  .fourties{
+    background-color: #fcffb0;
   }
   </style>
 </head>
 
-<body>
+<body class="d-flex vw-100 vh-100 text-center flex-column justify-content-between">
   <header data-include="./header/header.html"></header>
   <main>
-    <div id="lotto" class="d-flex justify-content-evenly"></div>
+    <div id="lotto-container" class="d-flex justify-content-center flex-wrap"></div>
   </main>
   <footer data-include="./footer/footer.html"></footer>
 </body>
@@ -33,19 +49,20 @@ const lotto = () =>{
   while(1){
     let num = parseInt(Math.random() * 45 +1);
     if(lotto.length >= 6) break;
-    if(lotto.indexOf(num) >= 0) continue;
-    lotto.push(num);
+    if(lotto.indexOf(num) < 0)  
+      lotto.push(num);
   }
   lotto.sort((a, b) => a - b);
-  const lottoNode = document.querySelector("#lotto");
+  const lottoNode = document.querySelector("#lotto-container");
   lotto.forEach(n =>{
-    const colors = ["aqua", "darkkhaki", "salmon", "lightgrey", "lightgreen"];
+    const colors = ["single-digit", "teens", "twenties", "thirties", "fourties"];
     const div = document.createElement("div");
 
     div.classList.add("lotto-num")
-    div.style.backgroundColor = colors[parseInt(n/10)%5];
+    div.classList.add("mx-3");
+    div.classList.add(`${colors[parseInt(n/10)%5]}`);
     div.innerText = n;
-    lottoNode.appendChild(div)
+    lottoNode.appendChild(div);
   });
 }
 lotto();
