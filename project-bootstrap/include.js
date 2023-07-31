@@ -11,7 +11,23 @@
       xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4) {
-          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 200) {
+            elmnt.innerHTML = this.responseText;
+            if(elmnt.getAttribute("data-include") === "./header/header.html"){
+              const page = window.location.pathname.split("/");
+              const currentPage = page[page.length-1].split(".")[0];
+              const currentPageId = `${currentPage}-page`;
+              const links = elmnt.firstElementChild.firstElementChild.children[2].firstElementChild.children;
+              for(let i of Object.entries(links)){
+                const link = i[1].firstElementChild;
+                if(currentPageId === link.getAttribute("id")){
+                  link.classList.add("active");
+                } else{
+                  link.classList.remove("active");
+                }
+              }
+            } 
+          }
           if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
           /* Remove the attribute, and call this function once more: */
           elmnt.removeAttribute("data-include");
@@ -25,4 +41,4 @@
     }
   }
 }
-  includeHTML();
+includeHTML();
