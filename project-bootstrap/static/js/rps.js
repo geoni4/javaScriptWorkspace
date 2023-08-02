@@ -21,13 +21,13 @@ const rpsMain = () => {
       yourCase.setAttribute("src", yourPath);
       if (cases.includes(you)) {
         let counter = 0;
-        computerTimeout = setTimeout(() => runComputer(you, counter, 100), 100);
+        computerTimeout = setTimeout(() => runComputer(counter, 100), 100);
       }
     });
   });
 };
 
-const runComputer = (you, counter, intervalDuration) => {
+const runComputer = (counter, intervalDuration) => {
   const computer = cases[parseInt(Math.random() * 30) % 3];
   const computersPath = `./static/images/${computer}.png`;
   computersCase.setAttribute("src", computersPath);
@@ -44,7 +44,7 @@ const runComputer = (you, counter, intervalDuration) => {
       el.classList.toggle("d-none");
     });
   } else {
-    computerTimeout = setTimeout(() => runComputer(you, counter + 1, intervalDuration), intervalDuration);
+    computerTimeout = setTimeout(() => runComputer(counter + 1, intervalDuration), intervalDuration);
   }
 };
 
@@ -54,7 +54,7 @@ beginBtn.addEventListener("click", () => {
     el.classList.toggle("d-none");
   });
   yourCase.setAttribute("src", "./static/images/rps-image.png");
-  computerTimeout = setTimeout(() => runComputer("", 13, 100), 100);
+  computerTimeout = setTimeout(() => runComputer(13, 100), 100);
 });
 
 
