@@ -23,8 +23,8 @@
   color: aliceblue;
   text-shadow: 0px 0px 2px #000;
   animation-name: fadeIn;
-    animation-duration: 0.7s;
-    animation-iteration-count: initial;
+  animation-duration: 0.7s;
+  animation-iteration-count: initial;
 }
   @keyframes fadeIn {
     from { opacity: 0; }
@@ -32,13 +32,11 @@
   }
 #lottery-button{
   background-color: #f3c6dd;
-  font-size: 1.2rem;
-  width: 10rem;
-  height: 4rem;
-  line-height: 4rem;
   color: aliceblue;
-  padding: 0px;
-  text-shadow: 0px 0px 2px #000;
+}
+#lottery-button:hover{
+  color: var(--bs-btn-hover-color);
+  background-color: var(--bs-btn-hover-bg);
 }
 .single-digit{
   background-color: #ffafb0;

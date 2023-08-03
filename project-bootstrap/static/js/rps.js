@@ -21,13 +21,13 @@ const rpsMain = () => {
       yourCase.setAttribute("src", yourPath);
       if (cases.includes(you)) {
         let counter = 0;
-        computerTimeout = setTimeout(() => runComputer(counter, 100), 100);
+        computerTimeout = setTimeout(() => runComputer(you, counter, 100), 100);
       }
     });
   });
 };
 
-const runComputer = (counter, intervalDuration) => {
+const runComputer = (you, counter, intervalDuration) => {
   const computer = cases[parseInt(Math.random() * 30) % 3];
   const computersPath = `./static/images/${computer}.png`;
   computersCase.setAttribute("src", computersPath);
@@ -44,7 +44,7 @@ const runComputer = (counter, intervalDuration) => {
       el.classList.toggle("d-none");
     });
   } else {
-    computerTimeout = setTimeout(() => runComputer(counter + 1, intervalDuration), intervalDuration);
+    computerTimeout = setTimeout(() => runComputer(you, counter + 1, intervalDuration), intervalDuration);
   }
 };
 
@@ -56,7 +56,7 @@ beginBtn.addEventListener("click", () => {
   yourCase.setAttribute("src", "./static/images/rps-image.png");
   judgeText.textContent = `가위 바위 보를 선택하세요.`;
   computerText.textContent = `무엇을 낼까요?`;
-  computerTimeout = setTimeout(() => runComputer(13, 100), 100);
+  computerTimeout = setTimeout(() => runComputer("", 13, 100), 100);
 });
 
 

@@ -32,7 +32,7 @@
     width: 100%;
     height: 50%;
   }
-  .cases div{
+  .cases > div{
     background-color: #f3c6dd;
     color:aliceblue;
   }
