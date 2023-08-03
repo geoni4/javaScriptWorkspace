@@ -54,6 +54,8 @@ beginBtn.addEventListener("click", () => {
     el.classList.toggle("d-none");
   });
   yourCase.setAttribute("src", "./static/images/rps-image.png");
+  judgeText.textContent = `가위 바위 보를 선택하세요.`;
+  computerText.textContent = `무엇을 낼까요?`;
   computerTimeout = setTimeout(() => runComputer(13, 100), 100);
 });
 
