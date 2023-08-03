@@ -5,7 +5,8 @@
   width: 100vw;
   height: 95vh;
   background: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
-    ), url(../images/main-background-image.jpg) ;
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.6)
+    ), url(../images/ForzJEyaIAEQfwf.jpg) no-repeat center/cover ;
 }
+
